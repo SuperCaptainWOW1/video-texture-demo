@@ -71,7 +71,7 @@ audio.volume = 0.1;
 
 audio.addEventListener("ended", () => {
   if (videoButton?.classList.contains("active")) {
-    setTimeout(() => (video.muted = false), 1000);
+    video.muted = false;
 
     if (audioButton) {
       audioButton.innerHTML = "Включить";
