@@ -70,13 +70,10 @@ const audio = new Audio("./audio.wav");
 audio.volume = 0.1;
 
 audio.addEventListener("ended", () => {
-  if (videoButton?.classList.contains("active")) {
-    video.muted = false;
-
-    if (audioButton) {
-      audioButton.innerHTML = "Включить";
-      audioButton.classList.remove("active");
-    }
+  video.muted = false;
+  if (audioButton) {
+    audioButton.innerHTML = "Включить";
+    audioButton.classList.remove("active");
   }
 });
 
