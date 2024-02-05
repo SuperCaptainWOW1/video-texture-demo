@@ -48,12 +48,13 @@ video.loop = true;
 
 const texture = new THREE.VideoTexture(video);
 texture.colorSpace = THREE.SRGBColorSpace;
-const material = new THREE.MeshStandardMaterial({
+const videoMaterial = new THREE.MeshStandardMaterial({
   map: texture,
+  visible: false,
 });
 
 const geometry = new THREE.PlaneGeometry(1.6, 0.9);
-const plane = new THREE.Mesh(geometry, material);
+const plane = new THREE.Mesh(geometry, videoMaterial);
 texture.update();
 scene.add(plane);
 
@@ -125,9 +126,11 @@ audioButton?.addEventListener("click", () => {
 
 function enableVideo() {
   video.play();
+  videoMaterial.visible = true;
 }
 function disableVideo() {
   video.pause();
+  videoMaterial.visible = false;
 }
 
 function enableAudio() {
