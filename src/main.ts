@@ -133,6 +133,8 @@ function disableVideo() {
 
 function enableAudio() {
   audio.play();
+
+  audio.currentTime = 0;
 }
 function disableAudio() {
   audio.pause();
