@@ -45,6 +45,7 @@ animate();
 const video = document.createElement("video");
 video.src = "./video.mp4";
 video.loop = true;
+video.playsInline = true;
 
 const texture = new THREE.VideoTexture(video);
 texture.colorSpace = THREE.SRGBColorSpace;
