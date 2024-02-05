@@ -49,7 +49,7 @@ video.playsInline = true;
 
 const texture = new THREE.VideoTexture(video);
 texture.colorSpace = THREE.SRGBColorSpace;
-const videoMaterial = new THREE.MeshStandardMaterial({
+const videoMaterial = new THREE.MeshBasicMaterial({
   map: texture,
   visible: false,
 });
